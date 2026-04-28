@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NUST Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4680fe 0%, #024179 100%);
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('images/nust_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            padding: 20px;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            max-height: 50px;
+            height: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .page-header {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .page-header h1 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .profile-container {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            flex-shrink: 0;
+        }
+        .profile-summary h2 {
+            color: #333;
+            margin: 0;
+            font-size: 2em;
+        }
+        .profile-summary p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h3 {
+            color: #333;
+            border-bottom: 2px solid rgba(107, 136, 250, 0.3);
+            padding-bottom: 10px;
+            margin: 0 0 20px 0;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .info-field {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4680fe;
+        }
+        .info-label {
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .info-value {
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 500;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            flex: 1;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary {
+            background: white;
+            color: #333;
+            border: 2px solid #4680fe;
+            flex: 1;
+        }
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .user-profile {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/nust logo.png" alt="NUST Logo">
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Student</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>My Profile</h1>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-picture">👤</div>
+                <div class="profile-summary">
+                    <h2>Alex Johnson</h2>
+                    <p>Student ID: STU2024001</p>
+                    <p>Bachelor of Science in Computer Science</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Personal Information</h3>
+                <div class="info-grid">
+                    <div class="info-field">
+                        <div class="info-label">Full Name</div>
+                        <div class="info-value">Alexander Johnson</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Student ID</div>
+                        <div class="info-value">STU2024001</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">alex.johnson@nust.edu</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Phone</div>
+                        <div class="info-value">+1 (555) 123-4567</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Date of Birth</div>
+                        <div class="info-value">January 15, 2003</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Gender</div>
+                        <div class="info-value">Male</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Academic Information</h3>
+                <div class="info-grid">
+                    <div class="info-field">
+                        <div class="info-label">Major</div>
+                        <div class="info-value">Computer Science</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Current Year</div>
+                        <div class="info-value">1st Year</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">GPA</div>
+                        <div class="info-value">3.85</div>
+                    </div>
+                    <div class="info-field">
+                        <div class="info-label">Enrollment Status</div>
+                        <div class="info-value">Active</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Contact & Address Information</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="address">Street Address</label>
+                        <input type="text" id="address" name="address" value="123 Main Street" required>
+                    </div>
+                    <div class="info-grid">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" value="Springfield" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" value="IL" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" name="zip" value="62701" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" value="alex.johnson@nust.edu" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary">Save Changes</button>
+                <button class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 NUST. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
+    </div>
+</body>
+</html>

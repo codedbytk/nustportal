@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees - NUST Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4680fe 0%, #024179 100%);
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('images/nust_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            padding: 20px;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            max-height: 50px;
+            height: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page-header {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .page-header h1 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .page-header p {
+            color: #555;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .fee-card {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .fee-card h3 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .fee-info {
+            color: #666;
+            font-size: 0.95em;
+            margin: 10px 0;
+        }
+        .fee-amount {
+            font-size: 1.8em;
+            color: #4680fe;
+            font-weight: 500;
+            margin: 15px 0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        .status-paid {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .status-pending {
+            background-color: #FFC107;
+            color: white;
+        }
+        .status-overdue {
+            background-color: #f44336;
+            color: white;
+        }
+        .pay-button {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .pay-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .summary-card {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(107, 136, 250, 0.2);
+            color: #333;
+        }
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        .summary-label {
+            font-weight: 500;
+        }
+        .summary-total {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #4680fe;
+            padding-top: 15px !important;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .user-profile {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/nust logo.png" alt="NUST Logo">
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Student</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Tuition Fees</h1>
+            <p>Manage and pay your tuition fees</p>
+        </div>
+
+        <div class="fees-grid">
+            <div class="fee-card">
+                <h3>Spring 2024 Tuition</h3>
+                <div class="fee-info">Semester Fee</div>
+                <div class="fee-amount">$3,500.00</div>
+                <span class="status-badge status-paid">✓ Paid</span>
+                <div class="fee-info">Paid on: March 15, 2024</div>
+            </div>
+
+            <div class="fee-card">
+                <h3>Summer 2024 Tuition</h3>
+                <div class="fee-info">Summer Session Fee</div>
+                <div class="fee-amount">$2,200.00</div>
+                <span class="status-badge status-pending">Pending</span>
+                <div class="fee-info">Due by: June 1, 2024</div>
+                <button class="pay-button">Pay Now</button>
+            </div>
+
+            <div class="fee-card">
+                <h3>Fall 2024 Tuition</h3>
+                <div class="fee-info">Fall Semester Fee</div>
+                <div class="fee-amount">$3,800.00</div>
+                <span class="status-badge status-pending">Pending</span>
+                <div class="fee-info">Due by: August 15, 2024</div>
+                <button class="pay-button">Pay Now</button>
+            </div>
+
+            <div class="fee-card">
+                <h3>Lab Fees</h3>
+                <div class="fee-info">Science & Computer Lab</div>
+                <div class="fee-amount">$450.00</div>
+                <span class="status-badge status-paid">✓ Paid</span>
+                <div class="fee-info">Paid on: February 10, 2024</div>
+            </div>
+
+            <div class="fee-card">
+                <h3>Technology Fee</h3>
+                <div class="fee-info">Library & IT Services</div>
+                <div class="fee-amount">$250.00</div>
+                <span class="status-badge status-pending">Pending</span>
+                <div class="fee-info">Due by: May 31, 2024</div>
+                <button class="pay-button">Pay Now</button>
+            </div>
+
+            <div class="fee-card">
+                <h3>Housing (On-Campus)</h3>
+                <div class="fee-info">Dormitory Fee</div>
+                <div class="fee-amount">$2,000.00</div>
+                <span class="status-badge status-paid">✓ Paid</span>
+                <div class="fee-info">Paid on: January 20, 2024</div>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <h3>Fee Summary</h3>
+            <div class="summary-row">
+                <span class="summary-label">Total Paid:</span>
+                <span>$6,200.00</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Total Pending:</span>
+                <span>$6,700.00</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Total Outstanding:</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-row summary-total">
+                <span class="summary-label">Total Amount Due:</span>
+                <span>$6,700.00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 NUST. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
+    </div>
+</body>
+</html>

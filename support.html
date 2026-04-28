@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - NUST Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4680fe 0%, #024179 100%);
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('images/nust_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            padding: 20px;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            max-height: 50px;
+            height: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page-header {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .page-header h1 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .page-header p {
+            color: #555;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .support-card {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .support-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .support-card h3 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .support-card p {
+            color: #666;
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+        .support-button {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+            width: 100%;
+        }
+        .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .faq-section {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .faq-section h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(107, 136, 250, 0.2);
+            padding-bottom: 20px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .faq-question:hover {
+            color: #4680fe;
+        }
+        .faq-answer {
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .user-profile {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/nust logo.png" alt="NUST Logo">
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Student</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Student Support</h1>
+            <p>Get help with your academic and administrative needs</p>
+        </div>
+
+        <div class="support-grid">
+            <div class="support-card">
+                <div class="support-icon">📞</div>
+                <h3>Contact Support</h3>
+                <p>Speak with a support representative</p>
+                <p><strong>Phone:</strong> 1-800-NUST-123</p>
+                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                <button class="support-button">Call Now</button>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>Chat with our support team</p>
+                <p><strong>Available:</strong> Mon-Fri 9AM-6PM</p>
+                <p><strong>Response:</strong> Within 5 minutes</p>
+                <button class="support-button">Start Chat</button>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">📧</div>
+                <h3>Email Support</h3>
+                <p>Send us your questions</p>
+                <p><strong>Email:</strong> support@nust.edu</p>
+                <p><strong>Response:</strong> Within 24 hours</p>
+                <button class="support-button">Send Email</button>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">📚</div>
+                <h3>Knowledge Base</h3>
+                <p>Browse our help articles</p>
+                <p>Find answers to common questions</p>
+                <button class="support-button">Browse Articles</button>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">🏫</div>
+                <h3>Academic Advisor</h3>
+                <p>Schedule a meeting with your advisor</p>
+                <p><strong>Location:</strong> Admin Building Room 101</p>
+                <button class="support-button">Book Appointment</button>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">🎓</div>
+                <h3>Tutoring Services</h3>
+                <p>Get free tutoring assistance</p>
+                <p><strong>Location:</strong> Learning Center</p>
+                <button class="support-button">Find Tutor</button>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I reset my password?</div>
+                <div class="faq-answer">
+                    Click on "Forgot Password" on the login page and follow the instructions sent to your email. If you don't receive an email within 10 minutes, check your spam folder or contact support.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I download my transcript?</div>
+                <div class="faq-answer">
+                    You can request an official transcript from the Registrar's Office. Visit their office in Building B, Room 202, or call (555) 123-4567 to request one.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the late fee policy?</div>
+                <div class="faq-answer">
+                    Late fees are assessed at $50 per day after the due date. To avoid late fees, ensure your payment is received by the deadline. Financial aid may cover some fees.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I request course materials?</div>
+                <div class="faq-answer">
+                    Contact your instructor directly through the course portal, or visit the bookstore in the Student Center. Some materials are available for free in the library.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I change my course schedule?</div>
+                <div class="faq-answer">
+                    Course changes can be made through the portal up to 2 weeks after the semester starts. After that period, you'll need approval from your academic advisor and the department.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I apply for a refund?</div>
+                <div class="faq-answer">
+                    Refund requests must be submitted within 30 days of payment. Visit the Finance Office in Building C, Room 105 with your payment receipt and ID.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 NUST. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
+    </div>
+</body>
+</html>

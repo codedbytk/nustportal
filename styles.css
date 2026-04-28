@@ -1,0 +1,27 @@
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: black;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: black;
+}
+
+div {
+    margin-bottom: 1em;
+    color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/nust_background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

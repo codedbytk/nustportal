@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUST Student Portal - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4680fe 0%, #024179 100%);
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('images/nust_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            padding: 20px;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            max-height: 50px;
+            height: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .welcome-section {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .welcome-section h1 {
+            color: #333;
+            margin: 0 0 15px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .welcome-section p {
+            color: #555;
+            font-size: 1.1em;
+            margin: 0;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .card {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        .card p {
+            color: #666;
+            margin: 10px 0;
+        }
+        .card-button {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .user-profile {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/nust logo.png" alt="NUST Logo">
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="logout.html">Logout</a>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Student</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome to NUST Student Portal</h1>
+            <p>Manage your academic journey efficiently</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>📚 My Courses</h3>
+                <p>View and manage your enrolled courses</p>
+                <button class="card-button">View Courses</button>
+            </div>
+
+            <div class="card">
+                <h3>📊 Grades</h3>
+                <p>Check your academic performance</p>
+                <button class="card-button">View Grades</button>
+            </div>
+
+            <div class="card">
+                <h3>📅 Schedule</h3>
+                <p>View your class timetable</p>
+                <button class="card-button">View Schedule</button>
+            </div>
+
+            <div class="card">
+                <h3>💰 Fees</h3>
+                <p>Check and pay your tuition fees</p>
+                <button class="card-button">View Fees</button>
+            </div>
+
+            <div class="card">
+                <h3>📝 Assignments</h3>
+                <p>Access your assignments and submissions</p>
+                <button class="card-button">View Assignments</button>
+            </div>
+
+            <div class="card">
+                <h3>👤 Profile</h3>
+                <p>Update your personal information</p>
+                <button class="card-button">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 NUST. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
+    </div>
+</body>
+</html>

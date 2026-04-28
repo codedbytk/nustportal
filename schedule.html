@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - NUST Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4680fe 0%, #024179 100%);
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('images/nust_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            padding: 20px;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            max-height: 50px;
+            height: auto;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page-header {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .page-header h1 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .page-header p {
+            color: #555;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .schedule-table {
+            background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(107, 136, 250, 0.8) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 500;
+            border-radius: 10px;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(107, 136, 250, 0.2);
+            color: #333;
+        }
+        tr:hover {
+            background-color: rgba(107, 136, 250, 0.1);
+        }
+        .time-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4680fe 0%, #09589d 100%);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .user-profile {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/nust logo.png" alt="NUST Logo">
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Student</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Class Schedule</h1>
+            <p>Your weekly course timetable</p>
+        </div>
+
+        <div class="schedule-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="time-badge">9:00 - 10:30</span></td>
+                        <td>-</td>
+                        <td>Calculus I (MATH101)<br>Prof. Sarah Johnson<br>Science 301</td>
+                        <td>-</td>
+                        <td>Calculus I (MATH101)<br>Prof. Sarah Johnson<br>Science 301</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="time-badge">10:00 - 11:30</span></td>
+                        <td>Introduction to Programming (CS101)<br>Dr. John Smith<br>Building A, Lab 204</td>
+                        <td>-</td>
+                        <td>Introduction to Programming (CS101)<br>Dr. John Smith<br>Building A, Lab 204</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="time-badge">1:00 - 2:30</span></td>
+                        <td>Physics Fundamentals (PHYS101)<br>Dr. Michael Chen<br>Science Lab 105</td>
+                        <td>-</td>
+                        <td>Physics Fundamentals (PHYS101)<br>Dr. Michael Chen<br>Science Lab 105</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="time-badge">2:00 - 3:30</span></td>
+                        <td>-</td>
+                        <td>English Literature (ENG102)<br>Dr. Emma Wilson<br>Humanities 215</td>
+                        <td>-</td>
+                        <td>English Literature (ENG102)<br>Dr. Emma Wilson<br>Humanities 215</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="time-badge">10:00 - 12:00</span></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Chemistry Basics (CHEM101)<br>Dr. Robert Davis<br>Science Lab 202</td>
+                    </tr>
+                    <tr>
+                        <td><span class="time-badge">1:00 - 2:30</span></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Introduction to Business (BUS101)<br>Prof. Lisa Anderson<br>Commerce 110</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 NUST. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Contact Us</a></p>
+    </div>
+</body>
+</html>
